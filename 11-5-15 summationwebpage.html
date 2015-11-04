@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Professor</title>
+  <!-- <link href="mathstyles.css" rel="stylesheet" type="text/css"/> -->
+
+  <style>
+
+  body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #66CCCC;
+  }
+
+
+  </style>
+
+
+
+</head>
+<body>
+
+<h1>Morning Professor</h1>
+<p>Found this morning's lecture particularly interesting</p>
+<p>Well of course my ears perked up when I heard programming</p>
+
+<br/>
+<div id="answer">
+  <h3>If I didn't screw up, answer should be below</h3>
+  <br/>
+  <h1 id="yoloAnswer"></h1>
+
+  <h3>This thing diverges really slowly</h3>
+</div>
+
+
+<form method="post">
+  <label for="numberInput">from n = 1 to........</label>
+  <input type="text" name="numberInput" id="repetitions">
+  <button onclick="sumation(document.getElementById('repetitions').value)" >Let us Math it up</button>
+</form>
+
+
+
+
+  <script>
+
+  function sumation(n){
+
+    var answer = 0;
+    var temp;
+
+
+    for(var i = 1; i <= n; i++){
+        temp = 1/(Math.pow(i,(1 + 1/i)));
+        answer += temp;
+
+    }
+
+    document.getElementById('answer').innerHTML = answer;
+
+    alert(answer);
+
+
+
+  }
+
+
+  </script>
+
+</body>
