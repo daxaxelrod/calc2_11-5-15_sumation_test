@@ -12,9 +12,9 @@
     text-align: center;
     background-color: #66CCCC;
   }
-
-
   </style>
+
+
 
 
 
@@ -29,16 +29,18 @@
 <div id="answer">
   <h3>If I didn't screw up, answer should be below</h3>
   <br/>
-  <h1 id="yoloAnswer"></h1>
+
 
   <h3>This thing diverges really slowly</h3>
 </div>
 
+<h1 id="yoloAnswer"></h1>
 
-<form method="post">
+
+<form>
   <label for="numberInput">from n = 1 to........</label>
   <input type="text" name="numberInput" id="repetitions">
-  <button onclick="sumation(document.getElementById('repetitions').value)" >Let us Math it up</button>
+  <button onclick="return sumation(document.getElementById('repetitions').value)" >Let us Math it up</button>
 </form>
 
 
@@ -46,25 +48,30 @@
 
   <script>
 
-  function sumation(n){
 
-    var answer = 0;
-    var temp;
+  // $(document).ready(
+   function sumation(n){
+
+      var answer = 0;
+      var temp;
 
 
-    for(var i = 1; i <= n; i++){
-        temp = 1/(Math.pow(i,(1 + 1/i)));
-        answer += temp;
+      for(var i = 1; i <= n; i++){
+          temp = 1/(Math.pow(i,(1 + 1/i)));
+          answer += temp;
+
+      }
+
+      document.getElementById('yoloAnswer').innerHTML = answer;
+
+      //lolz returning false fixes all my problems
+      return false;
+
+
+
 
     }
-
-    document.getElementById('answer').innerHTML = answer;
-
-    alert(answer);
-
-
-
-  }
+  //);
 
 
   </script>
